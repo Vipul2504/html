@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <title>Registration form</title>
+
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+            font-family: 'Montserrat', sans-serif;
+            background-image: url("space1.jpg");
+            width: 100%;
+            overflow-x: hidden;
+            
+        }
+
+        .profile {
+            height: 170px;
+            width: 170px;
+            position: absolute;
+            top: 20%;
+            left: 90%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            overflow: hidden;
+            /* margin-top: -100px; */
+            border: 1px solid grey;
+        }
+
+        #photo {
+            height: 100%;
+            width: 100%;
+        }
+
+        #file {
+            display: none;
+        }
+
+        #uploadBtn {
+            height: 40px;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: wheat;
+            text-align: center;
+            font-family: sans-serif;
+            cursor: pointer;
+        }
+
+        table {
+            width: 100%;
+            height: 100%;
+            overflow-y: hidden;
+        }
+
+        .para{
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        .log{
+            margin-top: 60px;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid white;
+            border-collapse: collapse;
+            padding: 8px 10px;
+            background-color: #15161a;
+            color: white;
+            font-size: large;
+            overflow-x: hidden;
+        }
+
+        #usr {
+            border-style: none;
+            font-size: 16px;
+            padding: 4px 0px !important;
+            outline: none !important;
+            font-weight: 600;
+            width: 100%;
+            color: black;
+            overflow-x: hidden;
+        }
+
+        .phone:focus {
+            outline: none;
+        }
+
+        hr {
+            border: 1px solid black;
+        }
+
+        #mail {
+            border-style: none;
+            font-size: 16px;
+            padding: 4px 0px;
+            outline: none !important;
+            width: 100%;
+        }
+
+        span {
+            display: inline-flex;
+            width: 100%;
+            color: yellowgreen;
+            background-color: #000000;
+            font-size: xx-large;
+        }
+
+        .heading,
+        h1,
+        p {
+            color: yellowgreen;
+        }
+
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        .heading{
+            background-color: darkgray;
+            color: black;
+            padding: 6px 0px;
+        }
+
+        .block {
+        display: flex;
+        width: 15%;
+        background-color: #beaeae;
+        border: none;
+        color: black;
+        border:2px solid black;
+        padding: 14px 25px;
+        margin: 0px 45%;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 25px;
+        outline: none !important;
+        text-align: center;
+        align-content: center;
+        justify-content: center;
+        margin-bottom: 25px;
+    }
+
+    .block:hover{
+        background-color: grey;
+        color: white;
+        border: 2px solid white;
+    }
+
+    .box{
+        text-align: center;
+
+    }
+
+@media screen and (max-width: 768px) {
+     .block {
+    display: block;
+    width: auto;
+    float: none;
+}
+
+        @media screen and (min-width: 600px) {
+  div.profile {
+      display: inline-block;
+      overflow-x: hidden;
+    
+
+  white-space: normal;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  div.profile {
+      display: inline-flexbox;
+      overflow-x: hidden;
+
+  white-space: normal;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  div.head {
+  display: flex;
+  overflow-x: hidden;
+
+  width: 50%;
+  white-space: normal; 
+  margin-bottom: 70px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  div.head {
+    display: flex;
+    overflow-x: hidden;
+
+width: 50%;
+white-space: normal;
+margin-bottom: 150px;
+  }
+}
+
+@media only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+
+                table, thead, tbody, th, td, tr { 
+                        display: block; 
+                        overflow-x: hidden;
+                }
+
+                input{
+                    color: black;
+                    font-weight: 600s;
+                }
+
+
+                thead tr { 
+                        position: absolute;
+                        top: -9999px;
+                        left: -9999px;
+                }
+                
+                tr { border-bottom: 1px solid #ccc; }
+
+
+                td { 
+                     border: none;
+                     border-bottom: 1px solid #eee; 
+                     position: relative;
+                     padding-left: 50%; 
+                }
+                td:before { 
+                        position: absolute;
+                        top: 3px;
+                        left: 6px;
+                        width: 45%; 
+                        padding-right: 10px; 
+                        white-space: nowrap;
+                        /* font-weight: 300; */
+                }
+}
+
+        @media only screen
+        and (min-device-width : 320px)
+        and (max-device-width : 480px) {
+                body { 
+                    overflow-x: hidden;
+                        padding: 0; 
+                        margin: 0; 
+                        width: 500px;
+                        margin-bottom: 600px; }
+                }
+        @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+                body { 
+                    overflow-x: hidden;
+                    margin: 0px;
+                    padding: 0px;
+                        width: 400px;
+                        margin-bottom: 600px; 
+                }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="head">
+            <div class="para">
+            <h1>Registration Form</h1>
+            <p>Additional Information Here and about the deadlines.</p>
+        </div>
+            <div class="profile">
+                <img src="image.jpg" id="photo">
+                <input type="file" id="file">
+                <label for="file" id="uploadBtn">Choose Photo</label>
+                <input type="file">
+            </div>
+        </div>
+        <br>
+        <br>
+
+        <div>
+            <table class="table log table-dark ">
+                <tr>
+                    <td>
+                        Login ID:
+                    </td>
+                    <td>
+                        <input type="text" id="usr" name="login" placeholder="your login ID">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <br>
+        <br>
+
+        <div class="container1">
+            <table class="table table-dark">
+                <tr>
+                    <td class="box">
+                        Area of Interest:
+                    </td>
+                    <td style="padding-top: 150px;">
+                        <input type="text" id="usr" name="interest">
+                    </td>
+                    <td class="box">
+                        Preferefence:
+                    </td>
+                    <td style="text-align: center;">
+                        1. <input type="text" id="usr" name="pre1">
+                        <hr>
+                        <br>
+                        2. <input type="text" id="usr" name="pre2">
+                        <hr>
+                        <br>
+                        3. <input type="text" id="usr" name="pre3">
+                        <hr>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="box">
+                        Prof. interested to work with
+                    </td>
+                    <td colspan="3">
+                        1. <input type="text" id="usr" name="pro">
+                        <hr>
+                        <br>
+                        2. <input type="text" id="usr" name="pro1">
+                        <hr>
+                        <br>
+                        3. <input type="text" id="usr" name="pro2">
+                        <hr>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="personal">
+            <span><b>Personal Details</b> </span>
+            <table class="table table-dark">
+                <tr>
+                    <td>
+                        First Name
+                    </td>
+                    <td>
+                        <input type="text" id="usr" name="fname">
+                    </td>
+                    <td>
+                        Last Name
+                    </td>
+                    <td>
+                        <input type="text" id="usr" name="lname">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Gender
+                    </td>
+                    <td>
+                        <input type="text" id="usr" name="gender">
+                    </td>
+                    <td>
+                        Date of Birth
+                    </td>
+                    <td>
+                        <input type="text" id="usr" name="DOB" placeholder="DD/MM/YYYY">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Email
+                    </td>
+                    <td class="mail">
+                        <input type="email" id="mail" name="mail">
+                    </td>
+                    <td>
+                        Alternate Email
+                    </td>
+                    <td class="mail">
+                        <input type="email" id="mail" name="mail">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Telephone
+                    </td>
+                    <td>
+                        <input type="number" id="usr" name="contact">
+                    </td>
+                    <td>
+                        Mobile
+                    </td>
+                    <td>
+                        <input type="number" id="usr" name="contact">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Correspondence Address
+                    </td>
+                    <td>
+                        <input type="text" id="usr" name="add">
+                    </td>
+                    <td>
+                        Permanent Address
+                    </td>
+                    <td>
+                        <input type="text" id="usr" name="add" value="same as correspondance">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        City
+                    </td>
+                    <td>
+                        <input type="text" id="usr" name="city">
+                    </td>
+                    <td>
+                        City
+                    </td>
+                    <td>
+                        <input type="text" id="usr" name="city">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        State
+                    </td>
+                    <td>
+                        <input type="text" id="usr" name="state">
+                    </td>
+                    <td>
+                        State
+                    </td>
+                    <td>
+                        <input type="text" id="usr" name="state">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Postal code
+                    </td>
+                    <td>
+                        <input type="text" id="usr" name="code">
+                    </td>
+                    <td>
+                        Postal code
+                    </td>
+                    <td>
+                        <input type="text" id="usr" name="code">
+                    </td>
+
+                </tr>
+            </table>
+        </div>
+        <br>
+        <br>
+
+        <div class="Academic">
+            <span><b>Academic Details</b> </span>
+            <table class="table table-dark">
+                <tr>
+                    <td colspan="6" class="heading">
+                   <b>SSC/Class X</b> 
+            </td>
+            </tr>
+
+                <tr>
+                    <td>
+                        Institution
+                    </td>
+                    <td colspan="2">
+                        <input type="text" id="usr" name="fname">
+                    </td>
+                    <td>
+                        Year of Passing
+                    </td>
+                    <td colspan="2">
+                        <input type="text" id="usr" name="fname">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        %/C.G.P.A
+                    </td>
+                    <td colspan="2">
+                        <input type="text" id="usr" name="percentage" value="<70% reject">
+                    </td>
+                    <td>
+                        University/Board
+                    </td>
+                    <td colspan="2">
+                        <input type="text" id="usr" name="University">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Majors
+                    </td>
+                    <td colspan="6">
+                        <input type="text" id="usr" name="majors">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="6" class="heading">
+                       <b>HSC/PUC/Class XII</b> 
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Institution
+                    </td>
+                    <td colspan="2">
+                        <input type="text" id="usr" name="institute">
+                    </td>
+                    <td>
+                        Year of Passing
+                    </td>
+                    <td colspan="2">
+                        <input type="text" id="usr" name="ypassing">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        %/C.G.P.A
+                    </td>
+                    <td colspan="2">
+                        <input type="text" id="usr" name="cgpa" value="<65% reject">
+                    </td>
+                    <td>
+                        University/Board
+                    </td>
+                    <td colspan="2">
+                        <input type="text" id="usr" name="Board">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Majors
+                    </td>
+                    <td colspan="6">
+                        <input type="text" id="usr" name="major">
+                    </td>
+                </tr>
+        </table>
+        <br>
+
+            <table class="table table-dark">
+                <tr>
+                    <td style="color: red;" colspan="6">
+                        ANY PREVIOUS/CURRENT BACKLOGS (A.T.K.T) WILL BE REJECTED
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="6" class="heading">
+                       <b>Graduation</b> 
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Course Name
+                    </td>
+                    <td colspan="6">
+                        <input type="text" id="usr" name="cname">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Institution
+                    </td>
+                    <td colspan="6">
+                        <input type="text" id="usr" name="institute">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        City
+                    </td>
+                    <td colspan="2">
+                        <input type="text" id="usr" name="city">
+                    </td>
+                    <td>
+                        Enrolment ID
+                    </td>
+                    <td colspan="2">
+                        <input type="text" id="usr" name="Enrolment">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Current Year
+                    </td>
+                    <td colspan="2">
+                        <input type="text" id="usr" name="cyear" value="<2 reject form">
+                    </td>
+                    <td>
+                        University/Board
+                    </td>
+                    <td colspan="2">
+                        <input type="text" id="usr" name="Board">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        %/C.G.P.A
+                    </td>
+                    <td>
+                        <input type="text" id="usr" name="cgpa" value="<7 reject form">
+                    </td>
+                    <td>
+                        Out of
+                    </td>
+                    <td>
+                        <input type="text" id="usr" name="mark">
+                    </td>
+                    <td>
+                        Expected Date of Graduation
+                    </td>
+                    <td>
+                        <input type="text" id="usr" name="D.O.Graduation">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="3">
+                        Semester Details
+                    </td>
+
+                    <td colspan="3">
+                        %/S.G.P.A
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="3">
+                        1 <sup>st</sup> Year
+                    </td>
+                    <td colspan="3" style="text-align: center;">
+                        <input type="text" id="usr" name="fsgpa" placeholder="1st Sem">
+                        <br>
+                        <hr>
+                        <input type="text" id="usr" name="fsgpa" placeholder="2nd Sem">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="3">
+                        2 <sup>nd</sup> Year
+                    </td>
+                    <td colspan="3" style="text-align: center;">
+                        <input type="text" id="usr" name="fsgpa" placeholder="3rd Sem">
+                        <br>
+                        <hr>
+                        <input type="text" id="usr" name="fsgpa" placeholder="4th Sem">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="3">
+                        3 <sup>rd</sup> Year
+                    </td>
+                    <td colspan="3" style="text-align: center;">
+                        <input type="text" id="usr" name="fsgpa" placeholder="5th Sem">
+                        <br>
+                        <hr>
+                        <input type="text" id="usr" name="fsgpa" placeholder="6th Sem">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="3">
+                        4 <sup>th</sup> Year
+                    </td>
+                    <td colspan="3" style="text-align: center;">
+                        <input type="text" id="usr" name="fsgpa" placeholder="7th Sem">
+                        <br>
+                        <hr>
+                        <input type="text" id="usr" name="fsgpa" placeholder="8th Sem">
+                    </td>
+                </tr>
+            </table>
+            <br>
+
+            <table class="table table-dark">
+                <tr>
+                    <td colspan="6" class="heading">
+                       <b>Post-Graduation</b> 
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Course Name
+                    </td>
+                    <td colspan="6">
+                        <input type="text" id="usr" name="cname">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Institution
+                    </td>
+                    <td colspan="6">
+                        <input type="text" id="usr" name="institute">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        City
+                    </td>
+                    <td colspan="2">
+                        <input type="text" id="usr" name="city">
+                    </td>
+                    <td>
+                        Enrolment ID
+                    </td>
+                    <td colspan="2">
+                        <input type="text" id="usr" name="Enrolment">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Current Year
+                    </td>
+                    <td colspan="2">
+                        <input type="text" id="usr" name="cyear">
+                    </td>
+                    <td>
+                        University/Board
+                    </td>
+                    <td colspan="2">
+                        <input type="text" id="usr" name="Board">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        C.G.P.A
+                    </td>
+                    <td colspan="2">
+                        <input type="text" id="usr" name="cgpa">
+                    </td>
+                    <td>
+                        Expected Date of Graduation
+                    </td>
+                    <td>
+                        <input type="text" id="usr" name="D.O.Graduation">
+                    </td>
+                </tr>
+
+                <tr class="sem">
+                    <th colspan="3">
+                       <b> Semester Details</b>
+                    </th>
+
+                    <th colspan="3">
+                       <b>%/S.G.P.A</b>
+                    </th>
+                </tr>
+
+                <tr class="sem">
+                    <td colspan="3">
+                        1 <sup>st</sup> Year
+                    </td>
+                    <td colspan="3" style="text-align: center;">
+                        <input type="text" id="usr" name="fsgpa" placeholder="1st Sem">
+                        <br>
+                        <hr>
+                        <input type="text" id="usr" name="fsgpa" placeholder="2nd Sem">
+                    </td>
+                </tr>
+
+                <tr class="sem">
+                    <td colspan="3">
+                        2 <sup>nd</sup> Year
+                    </td>
+                    <td colspan="3" style="text-align: center;">
+                        <input type="text" id="usr" name="fsgpa" placeholder="3rd Sem">
+                        <br>
+                        <hr>
+                        <input type="text" id="usr" name="fsgpa" placeholder="4th Sem">
+                    </td>
+                </tr>
+            </table>
+            </table>
+            <br>
+
+            <table class="table table-dark">
+                <tr>
+                    <td class="box">
+                        Relevant Courses
+                    </td>
+                    <td colspan="2">
+                        <input type="text" name="lyear" id="usr" placeholder="1.">
+                        <br>
+                        <input type="file" placeholder="upload Certificate" id="usr">
+                        <br>
+                        <hr>
+                        <input type="text" name="lyear" id="usr" placeholder="2.">
+                        <input type="file" placeholder="upload Certificate" id="usr">
+                        <br>
+                        <hr>
+                        <input type="text" name="lyear" id="usr" placeholder="3.">
+                        <br>
+                        <input type="file" placeholder="upload Certificate" id="usr">
+                        <hr>
+                        <input type="text" name="lyear" id="usr" placeholder="4.">
+                        <br>
+                        <input type="file" placeholder="upload Certificate" id="usr">
+                        <hr>
+                        <input type="text" name="lyear" id="usr" placeholder="5.">
+                        <br>
+                        <input type="file" placeholder="upload Certificate" id="usr">
+                    </td>
+                </tr>
+            </table>
+            <br>
+            <br>
+
+            <table class="table table-dark" >
+                <tr>
+                    <td>
+                        Have you participated in any research program
+                    </td>
+                    <td colspan="3">
+                        <input type="text" id="usr" name="research" value="YES/NO">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        If yes, Give Details
+                    </td>
+                    <td colspan="3">
+                        <input type="text" id="usr" name="details">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Topic of research
+                    </td>
+                    <td colspan="3">
+                        <input type="text" id="usr" name="topic">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Area of research
+                    </td>
+                    <td colspan="3">
+                        <input type="text" id="usr" name="area">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Date of start
+                    </td>
+                    <td>
+                        <input type="text" id="usr" name="start">
+                    </td>
+                    <td>
+                        Date of finish
+                    </td>
+                    <td>
+                        <input type="text" id="usr" name="finish">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Name of the Institution
+                    </td>
+                    <td colspan="3">
+                        <input type="text" id="usr" name="nameofinst">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Name of the prof.
+                    </td>
+                    <td colspan="3">
+                        <input type="text" id="usr" name="prof.">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Fellowship provided
+                    </td>
+                    <td>
+                        <input type="text" id="usr" name="Fellowship" value="YES/NO">
+                    </td>
+                    <td>
+                        If yes upload Certificate
+                    </td>
+                    <td>
+                        <input type="file">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Name of the organization
+                    </td>
+                    <td colspan="3">
+                        <input type="text" id="usr" name="org.">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Upload Dissertation
+                    </td>
+                    <td colspan="3">
+                        <input type="text" id="usr" name="dissertation">
+                    </td>
+                </tr>
+            </table>
+
+            <table class="table table-dark">
+                <tr>
+                    <td style="background-color: #4a4747;">
+                        Other Qualification, if any (give details)
+                    </td>
+                    <td >
+                        <input type="text" id="usr" name="Oqulaification">
+                    </td>
+                </tr>
+            </table>
+            <br>
+        </div>
+
+        <div class="other">
+            <span><b>Other Details</b> </span>
+            <table class="table table-dark">
+                <tr>
+                    <td>
+                        Training/ projects undertaken, if any (give details)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <textarea name="project" id="usr" cols="30" rows="10"></textarea>
+                    </td>
+                </tr>
+            </table>
+            <br>
+
+            <table class="table table-dark">
+                <tr>
+                    <td>
+                        Extra-curricular activities, if any
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <textarea name="activities" id="usr" cols="30" rows="10"></textarea>
+                    </td>
+                </tr>
+            </table><br>
+
+            <table class="table table-dark">
+                <tr>
+                    <td>
+                        Research Work/Lab Skills & Experience
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <textarea name="Skills" id="usr" cols="30" rows="10"></textarea>
+                    </td>
+                </tr>
+            </table>
+            <br>
+
+            <table class="table table-dark">
+                <tr>
+                    <td>
+                        Elaborate Your education & Career Goals
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <textarea name="Goals" id="usr" cols="30" rows="10"></textarea>
+                    </td>
+                </tr>
+            </table>
+            <br>
+
+            <table class="table table-dark">
+                <tr>
+                    <td>
+                        Publication, Awards & Honours (if any)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <textarea name="Awards" id="usr" cols="30" rows="10"></textarea>
+                    </td>
+                </tr>
+            </table>
+            <br>
+
+            <table class="table table-dark">
+                <tr>
+                    <td>
+                        Certification, Talks & Seminars Attended (please add only notable ones)
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <textarea name="Seminars" id="usr" cols="30" rows="10"></textarea>
+                    </td>
+                </tr>
+            </table>
+            <br>
+
+            <table class="table table-dark">
+                <tr>
+                    <td>
+                        A write-up (not exceeding 300 words) as to the specific area of interest of the applicant and
+                        what he/she would like to learn and achieve through this internship. It can also include the
+                        specific topics and projects that you are most interested in pursuing. What makes you an
+                        appropriate candidate for the program.
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <textarea name="internship" id="usr" cols="30" rows="10"></textarea>
+                    </td>
+                </tr>
+            </table>
+            <br>
+
+            <table class="table table-dark">
+                <tr>
+                    <td colspan="6">
+                       <b>Software Experience & level of experience</b> 
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="text-align: center; width: 50%;">
+                        Application
+                    </td>
+                    <td colspan="3" style="text-align: center;">
+                        Level of Experience
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="text-align: center;">
+                        Python
+                    </td>
+                    <td colspan="3">
+                        <input type="text" id="usr" name="python">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="text-align: center;">
+                        MATLAB/Octave
+                    </td>
+                    <td colspan="3">
+                        <input type="text" id="usr" name="Octave">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="text-align: center;">
+                        Mathematics
+                    </td>
+                    <td colspan="3">
+                        <input type="text" id="usr" name="maths">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="text-align: center;">
+                        C
+                    </td>
+                    <td colspan="3">
+                        <input type="text" id="usr" name="C">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="text-align: center;">
+                        C++
+                    </td>
+                    <td colspan="3">
+                        <input type="text" id="usr" name="C++">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="text-align: center;">
+                        Java
+                    </td>
+                    <td colspan="3">
+                        <input type="text" id="usr" name="java">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="text-align: center;">
+                        ANSYS
+                    </td>
+                    <td colspan="3">
+                        <input type="text" id="usr" name="ANSYS">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="text-align: center;">
+                        Linux
+                    </td>
+                    <td colspan="3">
+                        <input type="text" id="usr" name="Linux">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="text-align: center;">
+                        La Tex
+                    </td>
+                    <td colspan="3">
+                        <input type="text" id="usr" name="La Tex">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td style="text-align: center;">
+                        Others
+                    </td>
+                    <td colspan="3">
+                        <input type="text" id="usr" name="otherlang">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Upload CV
+                    </td>
+                    <td>
+                        <input type="file" id="usr" name="cv">
+                    </td>
+                    <td>
+                        Upload College ID
+                    </td>
+                    <td>
+                        <input type="file" id="usr" name="College">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Upload Marksheets
+                    </td>
+                    <td>
+                        <input type="file" id="usr" name="marksheet">
+                    </td>
+                    <td>
+                        Upload Certificates
+                    </td>
+                    <td>
+                        <input type="file" id="usr" name="Certificates">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        Upload Photo
+                    </td>
+                    <td>
+                        <input type="file" id="usr" name="photo">
+                    </td>
+                    <td>
+                        Upload Signature
+                    </td>
+                    <td>
+                        <input type="file" id="usr" name="sign">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="6">
+                        <b>Declaration:</b> I affirm that information given above is correct. I have carefully read all
+                        the "Instructions to Applications" as mentioned on the webistes and shall abide by the same.
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+
+ <button type="submit" class="block">Submit</button>
+      
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

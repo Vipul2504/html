@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyframe</title>
+</head>
+<style>
+.con{
+    display: flex;
+    background-color: blueviolet;
+}
+.box{
+    background-color: aqua;
+    width: 250px;
+    height: 250px;
+    position: relative;
+    animation-name: pawan;
+    animation-duration: 3s;
+    animation-iteration-count: 5;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    animation-delay: 2s;
+}
+@keyframes pawan {
+    from{
+        width: 200px;
+    }   
+    to{
+        width: 400px;
+    }
+}
+
+</style>
+<body>
+    <div class="con">
+        <div class="box">
+            this is box
+        </div>
+    </div>
+</body>
+</html>
